@@ -1,0 +1,4 @@
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Release/SpringCMWorkflow.csprojAssemblyReference.cache
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Release/SpringCMWorkflow.csproj.CoreCompileInputs.cache
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Release/SpringCMWorkflow.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Release/SpringCMWorkflow.dll

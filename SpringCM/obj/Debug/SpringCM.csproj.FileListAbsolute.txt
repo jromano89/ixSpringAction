@@ -1,0 +1,15 @@
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Debug/SpringCM.csprojAssemblyReference.cache
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Debug/SpringCM.csproj.CoreCompileInputs.cache
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/SpringCM.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/SpringCM.pdb
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.Controller.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.Extension.Action.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.Extension.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.Model.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.QAWizard.Design.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Intelledox.QAWizard.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/Newtonsoft.Json.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Debug/NLog.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Debug/SpringCM.csproj.CopyComplete
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Debug/SpringCM.dll
+/Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Debug/SpringCM.pdb

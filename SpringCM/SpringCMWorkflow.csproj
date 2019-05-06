@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15A29080-4AD5-4789-94E3-F2B1F6C07721}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpringCMWorkflow</RootNamespace>
+    <AssemblyName>SpringCMWorkflow</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Intelledox.Controller">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Controller.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Intelledox.Extension.Action">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Extension.Action.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Intelledox.Extension">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Extension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Intelledox.Model">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Intelledox.QAWizard.Design">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.QAWizard.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Intelledox.QAWizard">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.QAWizard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\IntelledoxActions.1.0.0\lib\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InitiateWorkflow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpringCMConnectorSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
