@@ -2,3 +2,15 @@
 /Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Release/SpringCMWorkflow.csproj.CoreCompileInputs.cache
 /Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/bin/Release/SpringCMWorkflow.dll
 /Users/jerrod.romano/Downloads/SpringCM Action/SpringCM/obj/Release/SpringCMWorkflow.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/SpringCMWorkflow.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.Controller.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.Extension.Action.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.Extension.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.Model.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.QAWizard.Design.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Intelledox.QAWizard.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/Newtonsoft.Json.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/bin/Release/NLog.dll
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/obj/Release/SpringCMWorkflow.csproj.CoreCompileInputs.cache
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/obj/Release/SpringCMWorkflow.csproj.CopyComplete
+/Users/jerrod.romano/Downloads/ixSpringAction/SpringCM/obj/Release/SpringCMWorkflow.dll

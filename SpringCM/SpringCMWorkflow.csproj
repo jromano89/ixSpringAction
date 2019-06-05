@@ -35,35 +35,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="Intelledox.Controller">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Controller.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Intelledox.Extension.Action">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Extension.Action.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Intelledox.Extension">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Extension.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Intelledox.Model">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.Model.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Intelledox.QAWizard.Design">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.QAWizard.Design.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Intelledox.QAWizard">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Intelledox.QAWizard.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="NLog">
       <HintPath>..\packages\IntelledoxActions.1.0.0\lib\NLog.dll</HintPath>
-      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

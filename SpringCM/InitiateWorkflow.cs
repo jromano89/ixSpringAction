@@ -8,6 +8,7 @@ using Intelledox.Extension;
 using Intelledox.Extension.Action;
 using Intelledox.Model;
 using Intelledox.QAWizard;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NLog;
 
@@ -25,13 +26,6 @@ namespace SpringCMWorkflow
         {
             return new List<AvailableInput>
             {
-                new AvailableInput
-                {
-                    Id = this._xmlDocumentName,
-                    Name = "XML Document Name",
-                    InstanceLimit = 1,
-                    Required = true
-                },
                 new AvailableInput
                 {
                     Id = this._workflowName,
@@ -86,46 +80,19 @@ namespace SpringCMWorkflow
                 string clientSecret = string.Empty;
                 string authURL = string.Empty;
                 string requestURL = string.Empty;
-                string xmlDocumentName = string.Empty;
                 string workflowName = string.Empty;
                 string environment = string.Empty;
                 string xmlPayload = string.Empty;
 
+                var workflowDocs = new Dictionary<string, List<string>>
+                {
+                    { "Items", new List<string>() }
+                };
+
                 foreach (RoutingOption routingOption in properties.ActionInputs)
                 {
-                    ActionInput input = (ActionInput)routingOption;
-                    bool flag5 = input.ElementTypeId == this._xmlDocumentName;
-                    if (flag5)
-                    {
-                        xmlDocumentName = input.OutputValue;
-                        bool flag6 = string.IsNullOrEmpty(xmlDocumentName);
-                        if (flag6)
-                        {
-                            throw new ApplicationException("An XML document name must be specified.  Please check your action attributes in Desiger.");
-                        }
-                        bool xmlFound = false;
-                        for (int i = 0; i < properties.Documents.Count; i++)
-                        {
-                            string extension = properties.Documents[i].Extension;
-                            if (!(extension == ".xml"))
-                            {
-                                throw new Exception("XML document not present.  Check Design to ensure an XML document is created.");
-                            }
-                            bool flag7 = properties.Documents[i].DisplayName.Equals(xmlDocumentName);
-                            if (flag7)
-                            {
-                                string text = await this.GetDocumentTextAsync(properties, properties.Documents[i]);
-                                xmlPayload = text;
-                                text = null;
-                                xmlFound = true;
-                            }
-                            if (xmlFound)
-                            {
-                                break;
-                            }
-                        }
-                    }
-                    else if (input.ElementTypeId == this._workflowName)
+                    ActionInput input = (ActionInput)routingOption; 
+                    if (input.ElementTypeId == this._workflowName)
                     {
                         workflowName = input.OutputValue;
                         if (string.IsNullOrEmpty(workflowName))
@@ -180,6 +147,22 @@ namespace SpringCMWorkflow
                     throw new Exception("An endpoint must be provided.  Please fix the connector settings in Manage.  Manage -> Settings -> Connector Settings -> SpringCM Connector");
                 }
 
+                for (int i = 0; i < properties.Documents.Count; i++)
+                {
+                    string docName = properties.Documents[i].DisplayName;
+                    string text = await this.GetDocumentTextAsync(properties, properties.Documents[i]);
+
+                    string extension = properties.Documents[i].Extension;
+                    if (extension == ".xml") { 
+                        xmlPayload = text;
+                    } else
+                    {
+                       workflowDocs["Items"].Add(text);
+                    }
+                    text = null;
+
+                }
+
                 HttpClientHandler handler = new HttpClientHandler();
                 HttpClient client = new HttpClient(handler);
                 client.DefaultRequestHeaders.ExpectContinue = new bool?(false);
@@ -217,8 +200,14 @@ namespace SpringCMWorkflow
                 text3 = null;
                 bearerToken = token["access_token"].ToString();
                 JObject jobject2 = new JObject();
+
                 jobject2.Add("Name", workflowName);
                 jobject2.Add("Params", xmlPayload);
+                if (workflowDocs["Items"].Count > 0)
+                {
+                    jobject2.Add("WorkflowDocuments", JsonConvert.SerializeObject(workflowDocs)); 
+                }
+
                 JObject workflow_config = jobject2;
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + bearerToken);
                 HttpResponseMessage httpResponseMessage2 = await client.PostAsync(requestURL, new StringContent(workflow_config.ToString(), Encoding.UTF8, "application/json"));
@@ -267,7 +256,6 @@ namespace SpringCMWorkflow
                 clientSecret = null;
                 authURL = null;
                 requestURL = null;
-                xmlDocumentName = null;
                 workflowName = null;
                 xmlPayload = null;
                 handler = null;
@@ -345,8 +333,6 @@ namespace SpringCMWorkflow
         }
 
         private Logger Logger = LogManager.GetCurrentClassLogger();
-
-        private readonly Guid _xmlDocumentName = new Guid("8A3081F4-62D6-4E5C-A9D9-2EB4792DA6BC");
 
         private readonly Guid _workflowName = new Guid("892EF5FA-3174-499E-ACA0-1CBA7B7F852F");
 
